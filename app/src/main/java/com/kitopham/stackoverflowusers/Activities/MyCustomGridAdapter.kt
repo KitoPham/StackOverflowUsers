@@ -1,7 +1,6 @@
 package com.kitopham.stackoverflowusers.Activities
 
 import android.content.Context
-import android.support.constraint.R.id.parent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -14,7 +13,7 @@ import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.grid_item.view.*
 
 
-class MyCustomGridAdapter(private var context: Context, private val users: List<User> ) : BaseAdapter() {
+class MyCustomGridAdapter(private val users: List<User> ) : BaseAdapter() {
 
 
     class ViewHolder{
@@ -26,7 +25,7 @@ class MyCustomGridAdapter(private var context: Context, private val users: List<
     override fun getView(position: Int, view: View?, viewGroup : ViewGroup?): View? {
 
         var newView: View? = view
-        val layoutInflater : LayoutInflater = context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
+        val layoutInflater : LayoutInflater = viewGroup?.context?.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
         var mViewHolder = ViewHolder()
 
         if (newView == null) {

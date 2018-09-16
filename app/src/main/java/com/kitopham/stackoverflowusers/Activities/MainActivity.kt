@@ -39,7 +39,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun populateGrid(context: Context){
-        val adapter = MyCustomGridAdapter(context, data as List<User>)
+        val adapter = MyCustomGridAdapter(data as List<User>)
         val gridView = GridView(context)
         val users = data
         gridView.adapter = adapter

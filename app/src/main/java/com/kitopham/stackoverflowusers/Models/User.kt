@@ -3,6 +3,7 @@ package com.kitopham.stackoverflowusers.Models
 
 
 data class User(
+
     var location: String? = null,
 
     var profile_image: String? = null,
